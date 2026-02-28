@@ -1,0 +1,176 @@
+.container {
+  min-height: calc(100vh - 80px);
+  /* Account for navbar */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.glowOrb1 {
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 50vw;
+  height: 50vw;
+  background: radial-gradient(circle, rgba(138, 43, 226, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.glowOrb2 {
+  position: absolute;
+  bottom: -20%;
+  right: -10%;
+  width: 60vw;
+  height: 60vw;
+  background: radial-gradient(circle, rgba(255, 0, 127, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero {
+  z-index: 1;
+  max-width: 900px;
+  width: 100%;
+  animation: slideUp var(--transition-slow);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.heroCard {
+  padding: 4rem 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -1px;
+}
+
+.description {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin: 2rem 0;
+  width: 100%;
+}
+
+.featureItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  transition: transform var(--transition-fast), background var(--transition-fast);
+}
+
+.featureItem:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.featureIcon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.featureItem h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.featureItem p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.actions {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.primaryBtn {
+  padding: 14px 32px;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 20px rgba(138, 43, 226, 0.3);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.primaryBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+
+.secondaryBtn {
+  padding: 14px 32px;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 1.1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  transition: background var(--transition-fast);
+}
+
+.secondaryBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .actions a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .heroCard {
+    padding: 2rem 1.5rem;
+  }
+}

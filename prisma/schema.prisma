@@ -1,0 +1,68 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String         @id @default(cuid())
+  email         String         @unique
+  passwordHash  String
+  createdAt     DateTime       @default(now())
+  posts         Post[]
+  comments      Comment[]
+  reports       Report[]       @relation("ReportedBy")
+  notifications Notification[]
+}
+
+model Post {
+  id          String    @id @default(cuid())
+  content     String
+  emotion     String    // e.g., happy, sad, frustrated, excited
+  category    String    // e.g., College, Relationships, Work, Family
+  isAnonymous Boolean   @default(true) // Mandatory anonymous posting
+  authorId    String
+  author      User      @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  reports     Report[]
+  comments    Comment[]
+}
+
+model Report {
+  id         String   @id @default(cuid())
+  reason     String
+  postId     String
+  post       Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+  reporterId String
+  reporter   User     @relation("ReportedBy", fields: [reporterId], references: [id], onDelete: Cascade)
+  createdAt  DateTime @default(now())
+  status     String   @default("PENDING") // PENDING, RESOLVED
+}
+
+model Notification {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  message   String
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
+model Comment {
+  id          String   @id @default(cuid())
+  content     String
+  postId      String
+  post        Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+  authorId    String
+  author      User     @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  isAnonymous Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}

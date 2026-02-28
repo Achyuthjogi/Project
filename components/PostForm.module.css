@@ -1,0 +1,128 @@
+.container {
+    padding: 2rem;
+    margin-bottom: 2rem;
+    animation: fadeIn var(--transition-slow);
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.textarea {
+    width: 100%;
+    min-height: 120px;
+    resize: vertical;
+    font-size: 1rem;
+    line-height: 1.5;
+    background: var(--bg-tertiary);
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.selectors {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.field label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.emotionsList {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.emotionBtn {
+    padding: 6px 12px;
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid transparent;
+    background: rgba(255, 255, 255, 0.03);
+    transition: all var(--transition-fast);
+}
+
+.emotionBtn:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.activeEmotion {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px currentColor;
+}
+
+.select {
+    padding: 8px 12px;
+    background: var(--bg-tertiary);
+    width: 150px;
+}
+
+.submitBtn {
+    padding: 10px 24px;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+.submitBtn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+}
+
+.error {
+    color: #ff4b4b;
+    background: rgba(255, 75, 75, 0.1);
+    padding: 1rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(255, 75, 75, 0.2);
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .selectors {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .select {
+        width: 100%;
+    }
+}

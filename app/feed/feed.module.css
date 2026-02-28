@@ -1,0 +1,125 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.loginPrompt {
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.filters {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.filterGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.filterGroup label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.chipGroup {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.chip {
+    padding: 6px 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-full);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all var(--transition-fast);
+}
+
+.chip:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+}
+
+.activeChip {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    border-color: currentColor;
+}
+
+.select {
+    padding: 10px 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    border-radius: var(--radius-sm);
+    width: 100%;
+    max-width: 300px;
+    font-size: 0.95rem;
+}
+
+.feed {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    gap: 1rem;
+    color: var(--text-secondary);
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(138, 43, 226, 0.2);
+    border-top-color: var(--brand-primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.empty {
+    padding: 3rem 2rem;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}

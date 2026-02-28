@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;600;800&display=swap');
+
+:root {
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #13131a;
+  --bg-tertiary: #1c1c26;
+  --brand-primary: #8a2be2;
+  --brand-secondary: #ff007f;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0b0;
+  --text-tertiary: #6b6b7b;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-highlight: rgba(255, 255, 255, 0.15);
+  
+  --emotion-happy: #00d2ff;
+  --emotion-sad: #4b6cb7;
+  --emotion-frustrated: #ff4b2b;
+  --emotion-excited: #fce043;
+  
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+  
+  --shadow-glow: 0 0 20px rgba(138, 43, 226, 0.3);
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4);
+  
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html, body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Glassmorphism utility classes */
+.glass-panel {
+  background: rgba(19, 19, 26, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, var(--brand-primary), var(--brand-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-bg {
+  background: linear-gradient(90deg, var(--brand-primary), var(--brand-secondary));
+  color: white;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  transition: all var(--transition-fast);
+}
+
+input, textarea, select {
+  font-family: inherit;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--brand-primary);
+}

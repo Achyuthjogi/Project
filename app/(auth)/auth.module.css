@@ -1,0 +1,129 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.backgroundGlow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(138, 43, 226, 0.15) 0%, rgba(255, 0, 127, 0.05) 50%, rgba(0, 0, 0, 0) 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.authCard {
+    width: 100%;
+    max-width: 440px;
+    padding: 3rem 2.5rem;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+    animation: slideUp var(--transition-slow);
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.title {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: left;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.label {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.input {
+    width: 100%;
+    font-size: 1rem;
+}
+
+.submitBtn {
+    width: 100%;
+    padding: 14px;
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    box-shadow: 0 4px 14px rgba(138, 43, 226, 0.2);
+}
+
+.submitBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+}
+
+.submitBtn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.error {
+    color: #ff4b4b;
+    background: rgba(255, 75, 75, 0.1);
+    padding: 1rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(255, 75, 75, 0.2);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    animation: slideUp var(--transition-fast);
+}
+
+.linkText {
+    color: var(--text-tertiary);
+    font-size: 0.9rem;
+    margin-top: 1.5rem;
+}
+
+.link {
+    color: var(--brand-primary);
+    font-weight: 600;
+    transition: color var(--transition-fast);
+}
+
+.link:hover {
+    color: var(--brand-secondary);
+}

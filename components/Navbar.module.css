@@ -1,0 +1,76 @@
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    margin: 1rem auto;
+    max-width: 1200px;
+    border-radius: var(--radius-full);
+    box-shadow: var(--shadow-card);
+}
+
+.logo {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: -0.5px;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.link {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: color var(--transition-fast);
+    padding: 0.5rem;
+}
+
+.link:hover,
+.active {
+    color: var(--text-primary);
+}
+
+.active {
+    font-weight: 700;
+}
+
+.logoutBtn {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    padding: 0.5rem;
+}
+
+.logoutBtn:hover {
+    color: #ff4b4b;
+}
+
+.registerBtn {
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 10px rgba(138, 43, 226, 0.2);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.registerBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        margin: 0;
+        border-radius: 0;
+        padding: 1rem;
+    }
+}
